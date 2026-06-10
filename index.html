@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#6ee7b7">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="FinançasPro">
+<meta name="description" content="Controle de receitas e despesas por mês — PWA">
+
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<title>FinançasPro · Instalar</title>
+<style>
+:root {
+  --bg:     #0e0f11;
+  --s1:     #16181c;
+  --s2:     #1e2128;
+  --border: #2a2d35;
+  --text:   #f1f5f9;
+  --muted:  #64748b;
+  --accent: #6ee7b7;
+  --green:  #22c55e;
+  --red:    #ef4444;
+  --warn:   #f59e0b;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Mono', monospace;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── NOISE OVERLAY ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  background-size: 256px;
+  opacity: .4;
+}
+
+/* ── GLOW BG ── */
+.glow-orb {
+  position: fixed; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: 0;
+}
+.orb1 { width: 420px; height: 420px; background: #6ee7b718; top: -120px; left: -100px; }
+.orb2 { width: 320px; height: 320px; background: #22c55e10; bottom: -80px; right: -80px; }
+
+/* ── WRAPPER ── */
+.wrap { position: relative; z-index: 1; max-width: 440px; margin: 0 auto; padding: 0 20px 60px; }
+
+/* ── HERO ── */
+.hero {
+  padding: 56px 0 40px;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  gap: 0;
+}
+
+.app-icon {
+  width: 96px; height: 96px;
+  background: var(--accent);
+  border-radius: 24px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.4rem;
+  margin-bottom: 24px;
+  box-shadow: 0 0 40px #6ee7b730, 0 8px 24px #0006;
+  animation: iconPop .6s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes iconPop {
+  from { transform: scale(0.6) rotate(-8deg); opacity: 0; }
+  to   { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+.hero-badge {
+  font-size: .6rem; text-transform: uppercase; letter-spacing: .18em;
+  color: var(--accent); background: #6ee7b712; border: 1px solid #6ee7b730;
+  padding: 4px 12px; border-radius: 99px; margin-bottom: 14px;
+  animation: fadeUp .5s .1s ease both;
+}
+
+.hero h1 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.4rem; line-height: 1.1;
+  letter-spacing: -.03em;
+  background: linear-gradient(135deg, #f1f5f9 30%, #6ee7b7);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  animation: fadeUp .5s .2s ease both;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: .78rem; color: var(--muted); line-height: 1.7;
+  animation: fadeUp .5s .3s ease both;
+  max-width: 300px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── STATS ROW ── */
+.stats {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px; margin: 28px 0;
+  animation: fadeUp .5s .4s ease both;
+}
+.stat {
+  background: var(--s1); border: 1px solid var(--border);
+  border-radius: 14px; padding: 14px 10px; text-align: center;
+}
+.stat-val {
+  font-family: 'DM Serif Display', serif; font-size: 1.3rem;
+  color: var(--accent); display: block; margin-bottom: 4px;
+}
+.stat-lbl { font-size: .55rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; }
+
+/* ── INSTALL BUTTON ── */
+.install-wrap { animation: fadeUp .5s .5s ease both; margin-bottom: 14px; }
+
+#btn-install {
+  width: 100%; padding: 16px; border-radius: 14px; border: none;
+  background: var(--accent); color: #0e0f11;
+  font-family: 'DM Mono', monospace; font-size: .88rem;
+  font-weight: 500; text-transform: uppercase; letter-spacing: .12em;
+  cursor: pointer; transition: all .2s;
+  display: flex; align-items: center; justify-content: center; gap: 10px;
+  box-shadow: 0 4px 24px #6ee7b730;
+}
+#btn-install:hover { transform: translateY(-2px); box-shadow: 0 8px 32px #6ee7b740; }
+#btn-install:active { transform: translateY(0); }
+#btn-install:disabled { opacity: .4; cursor: not-allowed; transform: none; }
+
+.btn-open {
+  width: 100%; padding: 14px; border-radius: 14px;
+  background: transparent; color: var(--accent);
+  border: 1px solid #6ee7b740;
+  font-family: 'DM Mono', monospace; font-size: .82rem;
+  text-transform: uppercase; letter-spacing: .12em;
+  cursor: pointer; transition: all .2s; text-decoration: none;
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+}
+.btn-open:hover { border-color: var(--accent); background: #6ee7b708; }
+
+/* ── STATUS BADGE ── */
+#install-status {
+  text-align: center; font-size: .68rem; color: var(--muted);
+  margin-top: 10px; min-height: 20px;
+  transition: color .3s;
+}
+#install-status.ok  { color: var(--green); }
+#install-status.err { color: var(--red); }
+
+/* ── DIVIDER ── */
+.div-label {
+  display: flex; align-items: center; gap: 12px;
+  font-size: .6rem; color: var(--muted); text-transform: uppercase;
+  letter-spacing: .14em; margin: 24px 0 20px;
+  animation: fadeUp .5s .55s ease both;
+}
+.div-label::before, .div-label::after {
+  content: ''; flex: 1; height: 1px; background: var(--border);
+}
+
+/* ── INSTRUCTIONS ── */
+.steps { display: flex; flex-direction: column; gap: 10px; animation: fadeUp .5s .6s ease both; }
+
+.step {
+  background: var(--s1); border: 1px solid var(--border);
+  border-radius: 14px; padding: 14px 16px;
+  display: flex; gap: 14px; align-items: flex-start;
+  transition: border-color .2s;
+}
+.step:hover { border-color: #3a4050; }
+
+.step-num {
+  width: 28px; height: 28px; border-radius: 8px;
+  background: var(--s2); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: .72rem; color: var(--accent); flex-shrink: 0; margin-top: 1px;
+}
+.step-body {}
+.step-title { font-size: .78rem; color: var(--text); margin-bottom: 4px; }
+.step-desc  { font-size: .67rem; color: var(--muted); line-height: 1.6; }
+.step-tag {
+  display: inline-block; margin-top: 6px;
+  background: var(--s2); border: 1px solid var(--border);
+  border-radius: 6px; padding: 3px 8px;
+  font-size: .6rem; color: var(--accent);
+}
+
+/* ── PLATFORM TABS ── */
+.ptabs {
+  display: flex; gap: 4px; background: var(--s2); padding: 4px;
+  border-radius: 10px; border: 1px solid var(--border);
+  margin-bottom: 16px; animation: fadeUp .5s .58s ease both;
+}
+.ptab {
+  flex: 1; padding: 8px; border-radius: 7px; border: none;
+  font-family: 'DM Mono', monospace; font-size: .65rem;
+  text-transform: uppercase; letter-spacing: .08em;
+  cursor: pointer; color: var(--muted); background: transparent;
+  transition: all .2s;
+}
+.ptab.active { background: var(--s1); color: var(--accent); border: 1px solid var(--border); }
+
+.psteps { display: none; }
+.psteps.active { display: flex; flex-direction: column; gap: 10px; }
+
+/* ── FEATURES ── */
+.features {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 10px;
+  margin-top: 28px; animation: fadeUp .5s .65s ease both;
+}
+.feat {
+  background: var(--s1); border: 1px solid var(--border);
+  border-radius: 14px; padding: 14px;
+}
+.feat-icon { font-size: 1.3rem; margin-bottom: 8px; }
+.feat-title { font-size: .72rem; color: var(--text); margin-bottom: 4px; }
+.feat-desc  { font-size: .62rem; color: var(--muted); line-height: 1.5; }
+
+/* ── FOOTER ── */
+footer {
+  margin-top: 40px; text-align: center;
+  font-size: .62rem; color: var(--muted);
+  line-height: 1.8; animation: fadeUp .5s .7s ease both;
+  border-top: 1px solid var(--border); padding-top: 24px;
+}
+
+/* ── INSTALLED BANNER ── */
+#installed-banner {
+  display: none; background: #14532d; border: 1px solid var(--green);
+  border-radius: 12px; padding: 14px 16px;
+  font-size: .75rem; color: var(--green);
+  text-align: center; margin-bottom: 14px;
+}
+#installed-banner.show { display: block; }
+</style>
+</head>
+<body>
+
+<div class="glow-orb orb1"></div>
+<div class="glow-orb orb2"></div>
+
+<div class="wrap">
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="app-icon">💰</div>
+    <div class="hero-badge">PWA · Instalar no celular</div>
+    <h1>Finanças Pro</h1>
+    <p>Controle de receitas e despesas por mês, com adiantamento e pagamento separados.</p>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat"><span class="stat-val">12</span><span class="stat-lbl">Meses</span></div>
+    <div class="stat"><span class="stat-val">2</span><span class="stat-lbl">Lotes</span></div>
+    <div class="stat"><span class="stat-val">100%</span><span class="stat-lbl">Offline</span></div>
+  </div>
+
+  <!-- INSTALL BUTTON (PWA prompt) -->
+  <div id="installed-banner">✓ App já instalado no seu dispositivo!</div>
+
+  <div class="install-wrap">
+    <button id="btn-install" disabled>
+      <span>⬇</span> Instalar App
+    </button>
+    <div id="install-status">Verificando suporte à instalação…</div>
+  </div>
+
+  <a class="btn-open" href="app.html">
+    <span>▶</span> Abrir no navegador
+  </a>
+
+  <!-- DIVIDER -->
+  <div class="div-label">Como instalar manualmente</div>
+
+  <!-- PLATFORM TABS -->
+  <div class="ptabs">
+    <button class="ptab active" onclick="switchPlat('android',this)">Android</button>
+    <button class="ptab" onclick="switchPlat('ios',this)">iPhone / iOS</button>
+    <button class="ptab" onclick="switchPlat('desktop',this)">Desktop</button>
+  </div>
+
+  <!-- ANDROID STEPS -->
+  <div class="psteps active" id="psteps-android">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Abra esta página no Chrome</div>
+        <div class="step-desc">Use o Google Chrome no Android para melhor compatibilidade com instalação PWA.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Toque no botão "Instalar App"</div>
+        <div class="step-desc">O botão verde acima aparecerá automaticamente quando o Chrome detectar que este é um app instalável.</div>
+        <span class="step-tag">ou use o menu ⋮ → "Adicionar à tela inicial"</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Confirme a instalação</div>
+        <div class="step-desc">Um pop-up aparecerá. Toque em "Instalar" e o app será adicionado à sua tela inicial como um APK nativo.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Pronto! Abra pelo ícone</div>
+        <div class="step-desc">O app abre em tela cheia, sem barra de navegador, como um aplicativo nativo. Funciona offline.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IOS STEPS -->
+  <div class="psteps" id="psteps-ios">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Abra no Safari</div>
+        <div class="step-desc">No iPhone/iPad, a instalação de PWA só funciona pelo Safari. Não use Chrome ou Firefox.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Toque no botão Compartilhar</div>
+        <div class="step-desc">Toque no ícone de compartilhamento (quadrado com seta para cima) na barra inferior do Safari.</div>
+        <span class="step-tag">Ícone ⎙ na barra do Safari</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Toque em "Adicionar à Tela de Início"</div>
+        <div class="step-desc">Role o menu de compartilhamento e toque em "Adicionar à Tela de Início" (ícone +).</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <div class="step-body">
+        <div class="step-title">Confirme o nome e instale</div>
+        <div class="step-desc">Edite o nome se quiser e toque em "Adicionar". O ícone aparecerá na sua tela inicial.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DESKTOP STEPS -->
+  <div class="psteps" id="psteps-desktop">
+    <div class="step">
+      <div class="step-num">1</div>
+      <div class="step-body">
+        <div class="step-title">Abra no Chrome ou Edge</div>
+        <div class="step-desc">Os navegadores Chrome e Microsoft Edge suportam instalação de PWA no desktop.</div>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <div class="step-body">
+        <div class="step-title">Clique no ícone de instalar na barra</div>
+        <div class="step-desc">No canto direito da barra de endereço aparecerá um ícone de monitor com seta. Clique nele.</div>
+        <span class="step-tag">Chrome: ícone ⊕ na barra de endereço</span>
+      </div>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <div class="step-body">
+        <div class="step-title">Clique em "Instalar"</div>
+        <div class="step-desc">Um pop-up de confirmação aparecerá. Clique em "Instalar" e o app abrirá em janela própria.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="features">
+    <div class="feat">
+      <div class="feat-icon">📅</div>
+      <div class="feat-title">Por mês independente</div>
+      <div class="feat-desc">Cada mês tem seus próprios dados, saldo isolado.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">✈️</div>
+      <div class="feat-title">Funciona offline</div>
+      <div class="feat-desc">Service Worker cacheia o app completo para uso sem internet.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">✏️</div>
+      <div class="feat-title">Editar & copiar</div>
+      <div class="feat-desc">Edite cada lançamento ou copie para outro mês com um toque.</div>
+    </div>
+    <div class="feat">
+      <div class="feat-icon">📊</div>
+      <div class="feat-title">Gráficos</div>
+      <div class="feat-desc">Comparativo entrada vs saída e ranking de despesas.</div>
+    </div>
+  </div>
+
+  <footer>
+    Finanças Pro · PWA · 2026<br>
+    Instale uma vez, use para sempre · sem anúncios · sem servidor
+  </footer>
+
+</div>
+
+<script>
+// ── SERVICE WORKER ──
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js')
+      .then(r => console.log('SW registrado:', r.scope))
+      .catch(e => console.warn('SW erro:', e));
+  });
+}
+
+// ── PWA INSTALL PROMPT ──
+let deferredPrompt = null;
+const btnInstall   = document.getElementById('btn-install');
+const statusEl     = document.getElementById('install-status');
+const banner       = document.getElementById('installed-banner');
+
+function setStatus(msg, cls='') {
+  statusEl.textContent = msg;
+  statusEl.className = cls;
+}
+
+// Check if already installed
+const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+                  || window.navigator.standalone === true;
+
+if (isStandalone) {
+  banner.classList.add('show');
+  btnInstall.disabled = true;
+  setStatus('App já instalado ✓', 'ok');
+} else {
+  // iOS detection
+  const isIOS = /iphone|ipad|ipod/i.test(navigator.userAgent) && !window.MSStream;
+  if (isIOS) {
+    btnInstall.disabled = true;
+    setStatus('No iPhone: use Safari → Compartilhar → Adicionar à tela inicial');
+    // Auto-switch to iOS tab
+    document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.psteps').forEach(p=>p.classList.remove('active'));
+    document.querySelector('.ptab:nth-child(2)').classList.add('active');
+    document.getElementById('psteps-ios').classList.add('active');
+  } else {
+    setStatus('Aguardando prompt do navegador…');
+  }
+}
+
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+  btnInstall.disabled = false;
+  setStatus('Pronto para instalar!', 'ok');
+});
+
+btnInstall.addEventListener('click', async () => {
+  if (!deferredPrompt) return;
+  deferredPrompt.prompt();
+  const { outcome } = await deferredPrompt.userChoice;
+  deferredPrompt = null;
+  if (outcome === 'accepted') {
+    btnInstall.disabled = true;
+    setStatus('App instalado com sucesso ✓', 'ok');
+    banner.classList.add('show');
+  } else {
+    setStatus('Instalação cancelada');
+  }
+});
+
+window.addEventListener('appinstalled', () => {
+  btnInstall.disabled = true;
+  setStatus('App instalado ✓', 'ok');
+  banner.classList.add('show');
+});
+
+// ── PLATFORM TABS ──
+function switchPlat(name, btn) {
+  document.querySelectorAll('.ptab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.psteps').forEach(p=>p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('psteps-'+name).classList.add('active');
+}
+</script>
+</body>
+</html>
