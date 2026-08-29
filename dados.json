@@ -1,0 +1,228 @@
+{
+  "app": "financas-pro",
+  "version": 3,
+  "savedAt": "2026-08-29T10:22:23.435518Z",
+  "db": {
+    "jan": {
+      "lote1": [],
+      "lote2": []
+    },
+    "fev": {
+      "lote1": [],
+      "lote2": []
+    },
+    "mar": {
+      "lote1": [],
+      "lote2": []
+    },
+    "abr": {
+      "lote1": [],
+      "lote2": []
+    },
+    "mai": {
+      "lote1": [],
+      "lote2": []
+    },
+    "jun": {
+      "lote1": [
+        {
+          "id": 1,
+          "tipo": "entrada",
+          "desc": "Adiantamento",
+          "valor": 1144.14,
+          "status": "pago",
+          "obs": "",
+          "cat": ""
+        },
+        {
+          "id": 2,
+          "tipo": "saida",
+          "desc": "Aluguel",
+          "valor": 700.0,
+          "status": "pago",
+          "obs": "",
+          "cat": "moradia"
+        },
+        {
+          "id": 3,
+          "tipo": "saida",
+          "desc": "Pensão",
+          "valor": 432.0,
+          "status": "pago",
+          "obs": "",
+          "cat": "familia"
+        }
+      ],
+      "lote2": [
+        {
+          "id": 4,
+          "tipo": "entrada",
+          "desc": "Pagamento",
+          "valor": 747.78,
+          "status": "pago",
+          "obs": "",
+          "cat": ""
+        },
+        {
+          "id": 5,
+          "tipo": "saida",
+          "desc": "Celular 10/10",
+          "valor": 259.9,
+          "status": "pago",
+          "obs": "",
+          "cat": "servicos"
+        },
+        {
+          "id": 6,
+          "tipo": "saida",
+          "desc": "Obramax 3-6",
+          "valor": 113.0,
+          "status": "pago",
+          "obs": "",
+          "cat": "moradia"
+        },
+        {
+          "id": 7,
+          "tipo": "saida",
+          "desc": "Mãe 6-12",
+          "valor": 144.0,
+          "status": "pago",
+          "obs": "",
+          "cat": "familia"
+        },
+        {
+          "id": 8,
+          "tipo": "saida",
+          "desc": "Conta Celular",
+          "valor": 110.0,
+          "status": "pago",
+          "obs": "",
+          "cat": "servicos"
+        },
+        {
+          "id": 9,
+          "tipo": "saida",
+          "desc": "Pavunense 3-5",
+          "valor": 97.44,
+          "status": "pendente",
+          "obs": "",
+          "cat": "compras"
+        },
+        {
+          "id": 10,
+          "tipo": "saida",
+          "desc": "Shopii 3-5",
+          "valor": 50.47,
+          "status": "pago",
+          "obs": "",
+          "cat": "compras"
+        },
+        {
+          "id": 11,
+          "tipo": "saida",
+          "desc": "Passagem 3-6",
+          "valor": 33.54,
+          "status": "pago",
+          "obs": "",
+          "cat": "transporte"
+        },
+        {
+          "id": 12,
+          "tipo": "saida",
+          "desc": "Carrinho 3-10",
+          "valor": 82.0,
+          "status": "pago",
+          "obs": "",
+          "cat": "compras"
+        },
+        {
+          "id": 13,
+          "tipo": "saida",
+          "desc": "Obramax 1/7",
+          "valor": 50.0,
+          "status": "pago",
+          "obs": "",
+          "cat": "moradia"
+        }
+      ]
+    },
+    "jul": {
+      "lote1": [],
+      "lote2": []
+    },
+    "ago": {
+      "lote1": [],
+      "lote2": []
+    },
+    "set": {
+      "lote1": [],
+      "lote2": []
+    },
+    "out": {
+      "lote1": [],
+      "lote2": []
+    },
+    "nov": {
+      "lote1": [],
+      "lote2": []
+    },
+    "dez": {
+      "lote1": [],
+      "lote2": []
+    }
+  },
+  "dates": {
+    "jan": {
+      "lote1": "",
+      "lote2": ""
+    },
+    "fev": {
+      "lote1": "",
+      "lote2": ""
+    },
+    "mar": {
+      "lote1": "",
+      "lote2": ""
+    },
+    "abr": {
+      "lote1": "",
+      "lote2": ""
+    },
+    "mai": {
+      "lote1": "",
+      "lote2": ""
+    },
+    "jun": {
+      "lote1": "20/06/2026",
+      "lote2": "05/07/2026"
+    },
+    "jul": {
+      "lote1": "",
+      "lote2": ""
+    },
+    "ago": {
+      "lote1": "",
+      "lote2": ""
+    },
+    "set": {
+      "lote1": "",
+      "lote2": ""
+    },
+    "out": {
+      "lote1": "",
+      "lote2": ""
+    },
+    "nov": {
+      "lote1": "",
+      "lote2": ""
+    },
+    "dez": {
+      "lote1": "",
+      "lote2": ""
+    }
+  },
+  "titles": {
+    "lote1": "Adiantamento",
+    "lote2": "Pagamento"
+  }
+}
