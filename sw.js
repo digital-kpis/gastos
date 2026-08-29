@@ -1,5 +1,5 @@
 // Mude este número sempre que atualizar os arquivos
-const VERSION = '1.5';
+const VERSION = '1.6';
 const CACHE = 'financas-v' + VERSION;
 
 const ASSETS = [
