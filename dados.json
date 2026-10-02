@@ -1,7 +1,7 @@
 {
   "app": "financas-pro",
   "version": 3,
-  "savedAt": "2026-08-29T10:22:23.435518Z",
+  "savedAt": "2026-10-02T22:37:55.919Z",
   "db": {
     "jan": {
       "lote1": [],
@@ -38,7 +38,7 @@
           "id": 2,
           "tipo": "saida",
           "desc": "Aluguel",
-          "valor": 700.0,
+          "valor": 700,
           "status": "pago",
           "obs": "",
           "cat": "moradia"
@@ -47,7 +47,7 @@
           "id": 3,
           "tipo": "saida",
           "desc": "Pensão",
-          "valor": 432.0,
+          "valor": 432,
           "status": "pago",
           "obs": "",
           "cat": "familia"
@@ -76,7 +76,7 @@
           "id": 6,
           "tipo": "saida",
           "desc": "Obramax 3-6",
-          "valor": 113.0,
+          "valor": 113,
           "status": "pago",
           "obs": "",
           "cat": "moradia"
@@ -85,7 +85,7 @@
           "id": 7,
           "tipo": "saida",
           "desc": "Mãe 6-12",
-          "valor": 144.0,
+          "valor": 144,
           "status": "pago",
           "obs": "",
           "cat": "familia"
@@ -94,7 +94,7 @@
           "id": 8,
           "tipo": "saida",
           "desc": "Conta Celular",
-          "valor": 110.0,
+          "valor": 110,
           "status": "pago",
           "obs": "",
           "cat": "servicos"
@@ -104,7 +104,7 @@
           "tipo": "saida",
           "desc": "Pavunense 3-5",
           "valor": 97.44,
-          "status": "pendente",
+          "status": "pago",
           "obs": "",
           "cat": "compras"
         },
@@ -130,7 +130,7 @@
           "id": 12,
           "tipo": "saida",
           "desc": "Carrinho 3-10",
-          "valor": 82.0,
+          "valor": 82,
           "status": "pago",
           "obs": "",
           "cat": "compras"
@@ -139,36 +139,440 @@
           "id": 13,
           "tipo": "saida",
           "desc": "Obramax 1/7",
-          "valor": 50.0,
-          "status": "pago",
+          "valor": 50,
+          "status": "pendente",
           "obs": "",
           "cat": "moradia"
         }
       ]
     },
     "jul": {
-      "lote1": [],
-      "lote2": []
+      "lote1": [
+        {
+          "id": 202,
+          "tipo": "entrada",
+          "desc": "Adiantamento",
+          "valor": 1144.14,
+          "status": "pendente",
+          "obs": "",
+          "cat": ""
+        },
+        {
+          "id": 229,
+          "tipo": "saida",
+          "desc": "Obramax 2/7",
+          "valor": 50,
+          "status": "pendente",
+          "obs": "",
+          "cat": "moradia"
+        }
+      ],
+      "lote2": [
+        {
+          "id": 208,
+          "tipo": "saida",
+          "desc": "Obramax 4-6",
+          "valor": 113,
+          "status": "pendente",
+          "obs": "",
+          "cat": "moradia"
+        },
+        {
+          "id": 211,
+          "tipo": "saida",
+          "desc": "Mãe 7-12",
+          "valor": 144,
+          "status": "pendente",
+          "obs": "",
+          "cat": "familia"
+        },
+        {
+          "id": 218,
+          "tipo": "saida",
+          "desc": "Pavunense 4-5",
+          "valor": 97.44,
+          "status": "pendente",
+          "obs": "",
+          "cat": "compras"
+        },
+        {
+          "id": 220,
+          "tipo": "saida",
+          "desc": "Shopii 4-5",
+          "valor": 50.47,
+          "status": "pendente",
+          "obs": "",
+          "cat": "compras"
+        },
+        {
+          "id": 222,
+          "tipo": "saida",
+          "desc": "Passagem 4-6",
+          "valor": 33.54,
+          "status": "pendente",
+          "obs": "",
+          "cat": "transporte"
+        },
+        {
+          "id": 225,
+          "tipo": "saida",
+          "desc": "Carrinho 4-10",
+          "valor": 82,
+          "status": "pendente",
+          "obs": "",
+          "cat": "compras"
+        },
+        {
+          "id": 232,
+          "tipo": "saida",
+          "desc": "Obramax 2/7",
+          "valor": 50,
+          "status": "pendente",
+          "obs": "",
+          "cat": "moradia"
+        }
+      ]
     },
     "ago": {
       "lote1": [],
-      "lote2": []
+      "lote2": [
+        {
+          "id": 209,
+          "tipo": "saida",
+          "desc": "Obramax 5-6",
+          "valor": 113,
+          "status": "pago",
+          "obs": "",
+          "cat": "moradia"
+        },
+        {
+          "id": 212,
+          "tipo": "saida",
+          "desc": "Mãe 8-12",
+          "valor": 144,
+          "status": "pago",
+          "obs": "",
+          "cat": "familia"
+        },
+        {
+          "id": 219,
+          "tipo": "saida",
+          "desc": "Pavunense 5-5",
+          "valor": 97.44,
+          "status": "pago",
+          "obs": "Ultima",
+          "cat": "compras"
+        },
+        {
+          "id": 221,
+          "tipo": "saida",
+          "desc": "Shopii 5-5",
+          "valor": 50.47,
+          "status": "pago",
+          "obs": "Ultima",
+          "cat": "compras"
+        },
+        {
+          "id": 223,
+          "tipo": "saida",
+          "desc": "Passagem 5-6",
+          "valor": 33.54,
+          "status": "pago",
+          "obs": "",
+          "cat": "transporte"
+        },
+        {
+          "id": 226,
+          "tipo": "saida",
+          "desc": "Carrinho 5-10",
+          "valor": 82,
+          "status": "pago",
+          "obs": "",
+          "cat": "compras"
+        },
+        {
+          "id": 233,
+          "tipo": "saida",
+          "desc": "Obramax 3/7",
+          "valor": 50,
+          "status": "pago",
+          "obs": "",
+          "cat": "moradia"
+        },
+        {
+          "id": 235,
+          "tipo": "saida",
+          "desc": "Conta Celular",
+          "valor": 110,
+          "status": "pendente",
+          "obs": "",
+          "cat": "servicos"
+        },
+        {
+          "id": 246,
+          "tipo": "saida",
+          "desc": "Passagem 3/3",
+          "valor": 39.66,
+          "status": "pago",
+          "obs": "",
+          "cat": ""
+        },
+        {
+          "id": 248,
+          "tipo": "entrada",
+          "desc": "Pagamento",
+          "valor": 807.93,
+          "status": "pendente",
+          "obs": "",
+          "cat": ""
+        },
+        {
+          "id": 251,
+          "tipo": "entrada",
+          "desc": "Celular",
+          "valor": 150,
+          "status": "pendente",
+          "obs": "",
+          "cat": "compras"
+        }
+      ]
     },
     "set": {
-      "lote1": [],
-      "lote2": []
+      "lote1": [
+        {
+          "id": 201,
+          "tipo": "entrada",
+          "desc": "Adiantamento",
+          "valor": 1144.14,
+          "status": "pago",
+          "obs": "",
+          "cat": ""
+        },
+        {
+          "id": 205,
+          "tipo": "saida",
+          "desc": "Aluguel",
+          "valor": 700,
+          "status": "pago",
+          "obs": "",
+          "cat": "moradia"
+        },
+        {
+          "id": 206,
+          "tipo": "saida",
+          "desc": "Pensão",
+          "valor": 432,
+          "status": "pago",
+          "obs": "",
+          "cat": "familia"
+        }
+      ],
+      "lote2": [
+        {
+          "id": 210,
+          "tipo": "saida",
+          "desc": "Obramax 6-6",
+          "valor": 113,
+          "status": "pendente",
+          "obs": "Ultima",
+          "cat": "moradia"
+        },
+        {
+          "id": 213,
+          "tipo": "saida",
+          "desc": "Mãe 9-12",
+          "valor": 144,
+          "status": "pago",
+          "obs": "",
+          "cat": "familia"
+        },
+        {
+          "id": 217,
+          "tipo": "saida",
+          "desc": "Conta Celular",
+          "valor": 110,
+          "status": "pago",
+          "obs": "",
+          "cat": "servicos"
+        },
+        {
+          "id": 224,
+          "tipo": "saida",
+          "desc": "Passagem 6-6",
+          "valor": 33.54,
+          "status": "pendente",
+          "obs": "Ultima",
+          "cat": "transporte"
+        },
+        {
+          "id": 227,
+          "tipo": "saida",
+          "desc": "Carrinho 6-10",
+          "valor": 82,
+          "status": "pendente",
+          "obs": "",
+          "cat": "compras"
+        },
+        {
+          "id": 234,
+          "tipo": "saida",
+          "desc": "Obramax 4/7",
+          "valor": 50,
+          "status": "pendente",
+          "obs": "",
+          "cat": "moradia"
+        },
+        {
+          "id": 249,
+          "tipo": "entrada",
+          "desc": "Pagamento",
+          "valor": 857.04,
+          "status": "pago",
+          "obs": "",
+          "cat": ""
+        },
+        {
+          "id": 250,
+          "tipo": "entrada",
+          "desc": "Celular",
+          "valor": 150,
+          "status": "pago",
+          "obs": "",
+          "cat": "compras"
+        }
+      ]
     },
     "out": {
       "lote1": [],
-      "lote2": []
+      "lote2": [
+        {
+          "id": 214,
+          "tipo": "saida",
+          "desc": "Mãe 10-12",
+          "valor": 144,
+          "status": "pendente",
+          "obs": "",
+          "cat": "familia"
+        },
+        {
+          "id": 228,
+          "tipo": "saida",
+          "desc": "Carrinho 7-10",
+          "valor": 82,
+          "status": "pendente",
+          "obs": "",
+          "cat": "compras"
+        },
+        {
+          "id": 238,
+          "tipo": "saida",
+          "desc": "Carrinho 7-10",
+          "valor": 82,
+          "status": "pendente",
+          "obs": "",
+          "cat": "compras"
+        },
+        {
+          "id": 242,
+          "tipo": "saida",
+          "desc": "Obramax 5/7",
+          "valor": 50,
+          "status": "pendente",
+          "obs": "",
+          "cat": "moradia"
+        },
+        {
+          "id": 252,
+          "tipo": "entrada",
+          "desc": "Celular",
+          "valor": 150,
+          "status": "pendente",
+          "obs": "",
+          "cat": "compras"
+        }
+      ]
     },
     "nov": {
       "lote1": [],
-      "lote2": []
+      "lote2": [
+        {
+          "id": 215,
+          "tipo": "saida",
+          "desc": "Mãe 11-12",
+          "valor": 144,
+          "status": "pendente",
+          "obs": "",
+          "cat": "familia"
+        },
+        {
+          "id": 239,
+          "tipo": "saida",
+          "desc": "Carrinho 8-10",
+          "valor": 82,
+          "status": "pendente",
+          "obs": "",
+          "cat": "compras"
+        },
+        {
+          "id": 243,
+          "tipo": "saida",
+          "desc": "Obramax 6/7",
+          "valor": 50,
+          "status": "pendente",
+          "obs": "",
+          "cat": "moradia"
+        },
+        {
+          "id": 253,
+          "tipo": "entrada",
+          "desc": "Celular",
+          "valor": 150,
+          "status": "pendente",
+          "obs": "",
+          "cat": "compras"
+        }
+      ]
     },
     "dez": {
       "lote1": [],
-      "lote2": []
+      "lote2": [
+        {
+          "id": 216,
+          "tipo": "saida",
+          "desc": "Mãe 12-12",
+          "valor": 144,
+          "status": "pendente",
+          "obs": "",
+          "cat": "familia"
+        },
+        {
+          "id": 240,
+          "tipo": "saida",
+          "desc": "Carrinho 9-10",
+          "valor": 82,
+          "status": "pendente",
+          "obs": "",
+          "cat": "compras"
+        },
+        {
+          "id": 244,
+          "tipo": "saida",
+          "desc": "Obramax 7/7",
+          "valor": 50,
+          "status": "pendente",
+          "obs": "Ultima",
+          "cat": "moradia"
+        },
+        {
+          "id": 254,
+          "tipo": "entrada",
+          "desc": "Celular",
+          "valor": 150,
+          "status": "pendente",
+          "obs": "",
+          "cat": "compras"
+        }
+      ]
     }
   },
   "dates": {
@@ -197,20 +601,20 @@
       "lote2": "05/07/2026"
     },
     "jul": {
-      "lote1": "",
-      "lote2": ""
+      "lote1": "20/07/2026",
+      "lote2": "05/08/2026"
     },
     "ago": {
-      "lote1": "",
-      "lote2": ""
+      "lote1": "20/08/2026",
+      "lote2": "05/09/2026"
     },
     "set": {
-      "lote1": "",
-      "lote2": ""
+      "lote1": "20/09/2026",
+      "lote2": "01/10/2026"
     },
     "out": {
-      "lote1": "",
-      "lote2": ""
+      "lote1": "15/10/2026",
+      "lote2": "01/11/2026"
     },
     "nov": {
       "lote1": "",
